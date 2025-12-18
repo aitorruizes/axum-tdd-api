@@ -1,3 +1,7 @@
+#![deny(clippy::all)]
+#![deny(clippy::pedantic)]
+#![deny(clippy::nursery)]
+
 use crate::composition::bootstrap::server::Server;
 
 pub mod composition {
@@ -11,6 +15,6 @@ async fn main() {
     let server = Server;
 
     if let Err(err) = server.run().await {
-        eprintln!("Could not run server: {err}")
+        eprintln!("Could not run server: {err}");
     }
 }

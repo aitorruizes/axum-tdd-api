@@ -1,4 +1,4 @@
-use crate::application::ports::env_port::{EnvError, EnvPort};
+use crate::application::ports::adapters::env::{EnvError, EnvPort};
 
 pub struct DotenvyAdapter {
     pub is_env_file_loaded: bool,

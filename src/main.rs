@@ -12,13 +12,54 @@ pub mod composition {
 
 pub mod application {
     pub mod ports {
-        pub mod env_port;
+        pub mod adapters {
+            pub mod env;
+            pub mod id_generator;
+            pub mod password_hasher;
+            pub mod time;
+        }
+
+        pub mod use_cases {
+            pub mod auth {
+                pub mod sign_up;
+            }
+        }
+    }
+
+    pub mod inputs {
+        pub mod auth {
+            pub mod sign_up;
+        }
+    }
+
+    pub mod use_cases {
+        pub mod auth {
+            pub mod sign_up;
+        }
     }
 }
 
 pub mod infrastructure {
     pub mod adapters {
         pub mod dotenvy;
+    }
+}
+
+pub mod domain {
+    pub mod entities {
+        pub mod user;
+    }
+
+    pub mod errors {
+        pub mod domain;
+    }
+
+    pub mod repositories {
+        pub mod user;
+    }
+
+    pub mod dtos {
+        pub mod user;
     }
 }
 

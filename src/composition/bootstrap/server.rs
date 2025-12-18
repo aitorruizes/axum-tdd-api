@@ -2,7 +2,7 @@ use axum::{Router, routing::get};
 use tokio::net::TcpListener;
 
 use crate::{
-    application::ports::env_port::{EnvError, EnvPort},
+    application::ports::adapters::env::{EnvError, EnvPort},
     infrastructure::adapters::dotenvy::DotenvyAdapter,
 };
 
